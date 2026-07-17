@@ -1,0 +1,61 @@
+#include<iostream>
+using namespace std;
+int prime(int b)
+{
+    int a[100];
+    int i=0;
+    int n;
+        int c=0;
+        int j;
+        for(j=2;j<100;j++)
+        { 
+            c=0;
+         n=1;
+        while (n<=j)
+        { 
+            if (j%n==0)
+            {
+                c++;
+            }
+            n++;
+        }
+        if(c==2)
+        {
+            a[i]=j;
+            i++;
+        }
+        }
+
+    return a[b-1];
+}
+
+int fib(int b)
+{ int c=b+1;
+    int a[c];
+    a[0]=1;
+    a[1]=1;
+    for(int i=2;i<c;i++)
+    {
+        a[i]=a[i-1]+a[i-2];
+    }
+    return a[b];
+}
+
+
+int main()
+{
+    int c;
+    int x;
+    cout<<"Enter the position:\n";
+    cin>>x;
+    if(x%2==0)
+    {
+       c= prime(x/2);
+        
+    }
+    else 
+    {
+        c=fib(x/2);
+    }
+    cout<<x<<"th term is:"<<c;
+}
