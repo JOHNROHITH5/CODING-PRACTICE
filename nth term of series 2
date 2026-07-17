@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+ int odd(int n)
+ {
+     int i ,a[n];
+     a[0]=1;
+     for (i=1;i<n;i++)
+     {
+         a[i]=a[i-1]*2;
+     }
+     return a[n-1];
+ }
+ int even(int n)
+ {
+     int i ,a[n];
+     a[0]=1;
+     for (i=1;i<n;i++)
+     {
+         a[i]=a[i-1]*3;
+     }
+     return a[n-1];
+ }
+ 
+ int main()
+ {
+     int x,c=0;
+     cout<<"Enter the position:";
+     cin>>x;
+     if (x%2==0)
+     {
+          c=even(x/2);
+     }
+     else{
+        c= odd((x/2)+1);
+     }
+     cout<<x<<"th term is:"<<c;
+ }
